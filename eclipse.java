@@ -1,0 +1,2 @@
+不小心点了eclipse某个地方在代码上面出来了个快速导航栏(Toggle Breadcrumb)，
+点击工具栏上有个小三角的Toggle Breadcrumb 图标就可以开启和关闭了
