@@ -1,0 +1,50 @@
+#cd /data/software
+
+--解压压缩包
+
+#tar -xzvf /data/software/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+
+--移动并修改文件名
+
+#mv /data/software/mysql-5.7.17-linux-glibc2.5-x86_64 /usr/local/mysql
+#数据仓库目录
+mkdir /usr/local/mysql/data/
+#      ---新建一个msyql组
+# useradd -r -s /sbin/nologin -g mysql mysql -d /usr/local/mysql     ---新建msyql用户禁止登录shell
+
+改变目录属有者
+
+#cd /usr/local/mysql
+#pwd
+#chown -R mysql .
+#chgrp -R mysql .
+chown -R mysql /usr/local/mysql/data/
+
+配置参数
+# bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data/
+ 上一步此处需要注意记录生成的临时密码，如上文结尾处的：YLi>7ecpe;YP
+#bin/mysql_ssl_rsa_setup  --datadir=/data/mysql
+cd /usr/local/mysql/support-files
+cp my-default.cnf /etc/my.cnf
+# cp mysql.server /etc/init.d/mysql
+
+# vim /etc/init.d/mysql
+basedir=
+datadir=
+9启动mysql
+
+# /etc/init.d/mysql start
+
+--登陆
+
+# mysql -hlocalhost -uroot -p
+--修改密码
+
+mysql> set password=password('root');
+
+--设置root账户的host地址（修改了才可以远程连接）
+
+mysql>grant all privileges on *.* to '账号'@'%' identified by '密码';
+mysql>flush privileges;
+
+
