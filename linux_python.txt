@@ -1,0 +1,75 @@
+cd /usr/local/software
+
+下载
+wget https://www.python.org/ftp/python/3.6.1/Python-3.7.0a2.tgz
+tar zxvf Python-3.7.0a2.tgz
+cd /usr/local/server/
+mkdir python
+mv /usr/local/software/Python-3.7.0a2 /usr/local/software/python
+进入python目录
+cd python
+
+./configure  安装
+make  编译
+
+make  install  这里可能报错
+
+
+can't decompress data; zlib not available 解决办法
+1--下载python-pip的tar包
+# wget https://pypi.python.org/packages/source/p/pip/pip-1.3.1.tar.gz --no-check-certificate 
+?由于下载pip是基于https协议的，故需要在wget url后面加上--no-check-certificate，否则不能下载:?
+
+2--安装pip:
+#tar xzvf pip-1.3.1.tar.gz 
+#cd pip-1.3.1 #python setup.py install 
+#python setup.py install
+
+3--安装:
+
+?1.安装依赖zlib、zlib-devel
+yum install zlib zlib
+yum install zlib zlib-devel
+?2.重新编译安装Python
+执行：./configure
+编辑Modules/Setup文件，找到下面这句去掉注释：#zlib zlibmodule.c -l$(prefix)/include-L$(exec_prefix)/lib-lz
+
+
+
+fatal error zlib.h No such file or directory
+cd /tmp
+
+wget http://www.zlib.net/zlib-1.2.11.tar.gz
+
+tar zxvf zlib-1.2.11.tar.gz
+
+cd zlib-1.2.11
+
+./configure
+
+make test
+
+make install
+
+构建共享库
+
+make clean
+
+./configure --shared
+
+make test
+
+make install
+
+cp zutil.h /usr/local/include
+
+cp zutil.c /usr/local/include
+
+于在centos下安装python3.7.0以上版本时报错ModuleNotFoundError: No module named '_ctypes'的解决办法
+
+
+3.7版本需要一个新的包libffi-devel，安装此包之后再次进行编译安装即可。
+
+#yum install libffi-devel -y
+#make install
+
