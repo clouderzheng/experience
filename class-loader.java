@@ -1,0 +1,3 @@
+jvm 将类加载过程划分为三个步骤：装载，连接，初始化
+加载时从外存储器找不到需要的class就出现ClassNotFoundException
+连接时从内存找不到需要的class就出现NoClassDefFoundError

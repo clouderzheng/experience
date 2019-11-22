@@ -319,3 +319,6 @@ box-shadow ÊôÐÔµÄÕâ¼¸Öµ·Ö±ð´ú±í£ºË®Æ½Æ«ÒÆÁ¿¡¢´¹Ö±Æ«ÒÆÁ¿¡¢Ä£ºýÁ¿¡¢À©Õ¹Á¿¡¢ÑÕÉ«¡¢Ò
 inline-block ÔªËØµÄ¿í¶ÈÊ¼ÖÕµÈÓÚÆäÄÚÈÝ¿í¶È¡£ÕâÖÖÔªËØ»¹ÓÐÒ»¸öÌØµã£¬¾ÍÊÇ¿ÉÒÔ
 °üÎ§¸¡¶¯ÔªËØ¡£²»¹ý£¬ÕâÖÖÔªËØÒ²ÓÐÒ»¸öÎÊÌâ£¬¼´²»ÄÜ¸øËüµÄÍâ±ß¾àÉè¶¨ auto Öµ¡ª¡ª
 ¶øÕâÇ¡Ç¡ÓÖÊÇÔÚ¸ü´óµÄÈÝÆ÷ÄÚ¾ÓÖÐÔªËØµÄ×î¼òµ¥·½·¨
+
+
+Ð£Ñé²å¼þ(http://validform.club/ ×îºÃµÄJQÐ£Ñé²å¼þ

@@ -1,0 +1,44 @@
+安装：
+1.安装gcc  redis是c语言编写的
+
+      yum install gcc-c++
+
+2.下载redis安装包,在root目录下执行
+
+    wget http://download.redis.io/releases/redis-5.0.4.tar.gz
+
+3.解压redis安装包
+
+   tar -zxvf redis-5.0.4.tar.gz
+
+5.编译
+
+   make
+
+6.安装
+
+   make PREFIX=/usr/local/redis install
+   
+9.编辑redis.conf   
+
+vim redis.conf
+
+1.后台启动，daemonize yes
+
+2.绑定端口，port 6379 默认是6379 需要安全组开放端口
+
+3.绑定IP，bind 192.168.2.128
+
+4.指定数据存放路径，dir /usr/local/redis/log rdb存放的路径
+
+5.指定持久化方式，appendonly yes
+
+6.requirepass redis129 设置密码
+   
+
+1、使用sds（Simple Dynamic String）封装字符串,{free,len,buf},
+2、使用sds防止数组数组溢出，
+3、计算长度复杂度O（1），
+4、扩展采用延迟回收内存，预先多分配内存
+5、删除策略：惰性删除（get是时候判断是否超时，超时删除）。加定时删除，定时删除超时的键值
+6、主从策略，只有主服务器才有删除操作，从库只进行读取，超时的不予处理，主服务器get超时的，发送通知到从库，删除

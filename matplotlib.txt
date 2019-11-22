@@ -1,0 +1,7 @@
+ax.arrow(1, 1, 1, 1, color='y', head_width=0.05, head_length=0.1, fc='k', ec='k')  等价于   （1,1 ）  （2,2）
+
+这里  第一个 x，y是 坐标点    dx，dy是增量值
+
+# plt.plot((1, 2), (1, 2), color='r', markerfacecolor='blue', marker='o')
+
+是 开始点 终止点 

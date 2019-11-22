@@ -1,0 +1,20 @@
+新建一个ALLUSERSPROFILE 路径 
+
+用管理员打开cmd，执行以下命令：
+
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+
+执行完毕之后，chocolatey就安装好了。
+
+
+安装 Python
+
+choco install python
+
+python 显示  
+
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+成功
